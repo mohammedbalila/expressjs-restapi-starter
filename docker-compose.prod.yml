@@ -1,0 +1,6 @@
+version: '3'
+services:
+  api:
+    command: yarn start:prod
+    environment:
+      - NODE_ENV=production
