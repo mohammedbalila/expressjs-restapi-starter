@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mustafabalila/enlighten-backend.git"
+    "url": "https://github.com/mustafabalila/expressjs-restapi-starter.git"
   },
   "author": "mustafabalila",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mustafabalila/enlighten-backend/issues"
+    "url": "https://github.com/mustafabalila/expressjs-restapi-starter.git/issues"
   },
-  "homepage": "https://github.com/mustafabalila/enlighten-backend#readme",
+  "homepage": "https://github.com/mustafabalila/expressjs-restapi-starter.git#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
