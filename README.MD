@@ -9,12 +9,12 @@
 
 ## Install packages
 
-```zsh
-$ yarn
+```bash
+$ npm install
 ```
 
 ## Run the app locally
 
-```zsh
-$ yarn start
+```bash
+$ npm start
 ```
