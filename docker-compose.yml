@@ -1,12 +1,12 @@
 version: '3'
 services:
   api:
-    command: yarn watch
+    command: npm run watch
     build: .
     environment:
-      - JWT_KEY=
-      - DB_URI=
-      - NODE_ENV=
+      - JWT_KEY=test-key
+      - DB_URI=mongodb://mongodb:27017/api
+      - NODE_ENV=development
     volumes:
       - .:/app
     ports:

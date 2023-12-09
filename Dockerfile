@@ -1,12 +1,25 @@
-FROM node:12
+FROM node:20.10-alpine3.17
 
-EXPOSE 8000
+RUN apk add tini
 
-RUN mkdir /app
+ENV NODE_ENV production
+
+RUN adduser -D node-user -G node
+
+USER node-user
+
 WORKDIR /app
-ADD package.json yarn.lock /app/
-RUN yarn --pure-lockfile
-RUN yarn global add pm2 
-ADD . /app
 
-CMD ["pm2-runtime", "src/server.js"]
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+ENTRYPOINT ["/sbin/tini", "--"]
+
+CMD ["node", "/app"]
+
+
+
+
+
+
