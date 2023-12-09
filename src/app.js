@@ -2,11 +2,7 @@ const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
 const passport = require('passport');
-const bodyParser = require('body-parser');
-const compression = require('compression');
-const helmet = require('helmet');
-const cors = require('cors');
-const router = require('./routes');
+const routes = require('./routes');
 const {
   handler: errorHandler,
   converter,
@@ -22,18 +18,18 @@ passportConfig(passport);
 app.use(passport.initialize());
 
 // performance & security utils
-app.use(compression());
-app.use(helmet());
+app.use(require('compression')());
+app.use(require('helmet')());
+app.use(require('cors')());
 
-app.use(cors());
-app.use(bodyParser.json({ limit: '3mb' }));
-app.use(bodyParser.urlencoded({ extended: true, limit: '3mb' }));
+app.use(express.json({ limit: '3mb' }));
+app.use(express.urlencoded({ extended: true, limit: '3mb' }));
 
 // logging
 app.use(morgan('common'));
 
 app.use('/media', express.static(path.join(__dirname, '../media')));
-app.use('/api', router);
+app.use('/api', routes);
 
 // format error then handle it
 app.use(converter);

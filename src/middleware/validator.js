@@ -1,7 +1,7 @@
 const { User } = require('../models');
 
 /**
- * @description validators file to validate and sanaztize user's
+ * @description validators file to validate and sanitize user's
  * input before sending it to the handlers
  */
 

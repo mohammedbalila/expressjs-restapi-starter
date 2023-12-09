@@ -2,8 +2,8 @@ const { Schema, model } = require('mongoose');
 const { hashSync, compareSync } = require('bcryptjs');
 
 /**
- * @description a base user model with some usful methods
- * to set password and hash sttings
+ * @description a base user model with some useful methods
+ * to set password and hash settings
  */
 
 // schema options

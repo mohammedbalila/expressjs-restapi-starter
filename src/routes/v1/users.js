@@ -7,8 +7,8 @@ const {
   findOne,
   confirm,
   updateOne,
-} = require('../controllers/user');
-const { isUnique } = require('../middleware/validator');
+} = require('../../controllers/user');
+const { isUnique } = require('../../middleware/validator');
 
 const router = Router();
 
